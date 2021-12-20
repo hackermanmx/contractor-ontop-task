@@ -9,7 +9,7 @@
   "private": false,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --no-live-reload",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
