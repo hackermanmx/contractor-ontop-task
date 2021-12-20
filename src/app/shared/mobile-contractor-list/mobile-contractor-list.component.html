@@ -1,0 +1,33 @@
+<div class="card" *ngFor="let row of data">
+    <div class="card-item" *ngFor="let col of columns">
+        <div class="key">
+            {{col.text}}
+        </div>
+        <div class="value" *ngFor="let item of (col | keyvalue); let i = index">
+            <ng-container [ngSwitch]="item.value">
+                <ng-container *ngSwitchCase="'amount'">
+                    {{row.amount | currency : row.currency : 'symbol' : '1.0-0'}} {{row.currency}}
+                </ng-container>
+                <ng-container *ngSwitchCase="'startDate'">
+                    {{row.startDate | date : 'mediumDate'}}
+                </ng-container>
+                <ng-container *ngSwitchCase="'status'">
+                    <label [attr.data-status]="row.status | lowercase" class="chip">
+                        {{row.status}}
+                    </label>
+                </ng-container>
+                <ng-container *ngSwitchDefault>
+                    {{row[item.value]}}
+                </ng-container>
+            </ng-container>
+        </div>
+    </div>
+    <div class="card-item" *ngIf="actions">
+        <div class="key">
+            Actions
+        </div>
+        <div class="value">
+            <ontop-table-actions triggerIcon="more_horizontal" [actions]="actions"></ontop-table-actions>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'assets/scss';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--body-bg);
+  margin: 0;
+  font-family: 'Aileron Regular', 'Helvetica Neue', sans-serif !important;
+}
+
+// Material overrides
+
+.mat-drawer-container {
+  background-color: var(--body-bg);
+  padding: 0 20px;
+}
+
+.mat-menu-content:not(:empty) {
+  box-shadow: 0 4px 15px rgb(0 0 0 / 10%);
+  border-radius: 5px;
+  padding: 18px 13px !important;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+}

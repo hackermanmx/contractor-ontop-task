@@ -1,0 +1,11 @@
+<div [matMenuTriggerFor]="menu" class="action-btn">
+    <mat-icon>{{triggerIcon}}</mat-icon>
+</div>
+<mat-menu #menu="matMenu">
+    <div *ngFor="let item of actions; let last = last" class="menu-item">
+        <button mat-menu-item>
+            <span [attr.data-menu-icon]="item.icon">{{item.text}}</span>
+        </button>
+        <mat-divider *ngIf="!last"></mat-divider>
+    </div>
+</mat-menu>

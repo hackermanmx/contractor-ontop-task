@@ -1,0 +1,28 @@
+<header>
+    <a mat-button routerLink="/">
+        <img alt="Logo" src="../assets/logo.svg">
+    </a>
+    <div fxShow="true" fxHide.lt-md="true" class="sitemap-container">
+        <span class="link-wrapper" [attr.data-icon]="link.icon" *ngFor="let link of sitemap">
+            <a>
+                <label>{{ link.text }}</label>
+                <mat-icon>expand_more</mat-icon>
+            </a>
+        </span>
+    </div>
+    <div class="profile-btn" fxShow="true" fxHide.lt-md="true">
+        <img alt="Logo" src="../assets/avatar.svg">
+        <mat-icon>expand_more</mat-icon>
+    </div>
+    <div fxShow="true" fxHide.gt-sm="true">
+        <button mat-icon-button class="menu-btn" [matMenuTriggerFor]="menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+</header>
+
+<mat-menu #menu="matMenu">
+    <a *ngFor="let link of sitemap" class="menu-item" mat-button routerLink="/">
+        {{link.text}}
+    </a>
+</mat-menu>

@@ -1,0 +1,78 @@
+<ng-container *ngIf="(client$ | async) as clientData">
+    <ontop-card [title]="'Contracts for ' + clientData.name">
+
+        <div class="filter-wrapper">
+            <div class="filter-container">
+                <label for="filter-input">
+                    <input type="text" id="filter-input" placeholder="Search">
+                </label>
+            </div>
+
+            <div class="filter-btns">
+                <button mat-ripple class="filter-btn">
+                    <span></span>
+                    Filter
+                </button>
+
+                <button mat-ripple class="primary elevated">
+                    <mat-icon>add</mat-icon>
+                    New hire
+                </button>
+            </div>
+        </div>
+
+        <form novalidate>
+            <div class="filters-container">
+                    <ontop-datepicker></ontop-datepicker>
+
+                    <ontop-select [options]="['Contract type']"></ontop-select>
+
+                    <input type="text" placeholder="Contractor name">
+
+                    <ontop-select [options]="['Status']"></ontop-select>
+
+                    <div data-clear-btn="delete" (click)="clearForm()" fxShow="true" fxHide.gt-sm="true">
+                        Clear filters
+                    </div>
+            </div>
+        </form>
+
+
+        <ontop-mobile-contractor-list fxShow="true" fxHide.gt-sm="true"
+                           [data]="rows$ | async"
+                           [columns]="columns$ | async"
+                           [actions]="actions"
+        >
+        </ontop-mobile-contractor-list>
+        <ontop-table
+                fxShow="true" fxHide.lt-md="true"
+                [columns]="columns$ | async"
+        >
+            <tr *ngFor="let row of (rows$ | async)" >
+                <td>
+                    <div>
+                        <img [src]="row.avatar" [alt]="row.name">
+                        {{row.name}}
+                    </div>
+                </td>
+                <td>
+                    {{row.type}}
+                </td>
+                <td>
+                    {{row.startDate | date : 'mediumDate'}}
+                </td>
+                <td>
+                    {{row.amount | currency : row.currency : 'symbol' : '1.0-0'}} {{row.currency}}
+                </td>
+                <td>
+                    <label [attr.data-status]="row.status | lowercase" class="chip">
+                        {{row.status}}
+                    </label>
+                </td>
+                <td>
+                    <ontop-table-actions triggerIcon="more_vert" [actions]="actions"></ontop-table-actions>
+                </td>
+            </tr>
+        </ontop-table>
+    </ontop-card>
+</ng-container>

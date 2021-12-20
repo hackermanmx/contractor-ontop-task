@@ -1,0 +1,30 @@
+input {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-size: 15px;
+  color: var(--gray-1);
+  background: white url('../../../../assets/down-arrow-icon.svg') no-repeat calc(100% - 15px) center;
+
+  &:before {
+    content: url('../../../../assets/time-icon.svg');
+    margin-right: 8px;
+    margin-top: 5px;
+  }
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+}

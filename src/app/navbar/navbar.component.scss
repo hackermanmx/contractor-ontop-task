@@ -1,0 +1,126 @@
+mat-sidenav {
+  width: 250px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 20px;
+
+    a {
+      margin-bottom: 25px;
+      font-size: 20px;
+      width: 100%;
+      text-align: initial;
+      color: var(--base-font-color);
+    }
+  }
+}
+
+header {
+  display: flex;
+  min-height: 108px;
+  box-sizing: border-box;
+  padding: 0 5%;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  justify-content: space-between;
+  background: white;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+
+  .menu-btn {
+    color: var(--base-font-color);
+    transform: scale(1.25);
+  }
+
+  .sitemap-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 7.5%;
+
+    [data-icon='first']:before {
+      content: url('../../assets/contracts-icon.svg');
+    }
+
+    [data-icon='second']:before {
+      content: url('../../assets/docs-icon.svg');
+    }
+
+    [data-icon='third']:before {
+      content: url('../../assets/payout-icon.svg');
+    }
+
+    [data-icon='fourth']:before {
+      content: url('../../assets/time-icon.svg');
+    }
+
+    .link-wrapper {
+      display: flex;
+      align-items: center;
+      position: relative;
+      color: var(--gray-1);
+
+      &:before {
+        margin-right: 10px;
+      }
+
+      &:hover {
+        transition: color 0.3s ease;
+        color: var(--base-font-color);
+      }
+
+      a {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        label {
+          cursor: pointer;
+          font-size: 18px;
+          line-height: 24px;
+          letter-spacing: 0.18px;
+        }
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 6px;
+        background: var(--base-font-color);
+        transition: width 0.3s;
+        position: absolute;
+        bottom: -42px;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .profile-btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      margin-right: 40px;
+      width: 1px;
+      height: 45px;
+      background: var(--gray-2);
+    }
+
+    img {
+      margin-right: 15px;
+    }
+
+    mat-icon {
+      transform: scale(1.2);
+      color: var(--gray-3);
+    }
+  }
+}

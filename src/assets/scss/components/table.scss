@@ -1,0 +1,36 @@
+tbody tr {
+  background-color: var(--body-bg);
+  margin-bottom: 24px;
+  border-radius: 5px;
+
+  td {
+    height: 90px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: var(--table-text-color);
+
+    div {
+      width: 100%;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+    }
+
+    img {
+      margin-right: 15px;
+    }
+  }
+}
+
+.action-btn {
+  color: var(--gray-2);
+  margin-right: 10px;
+  line-height: 0;
+  padding: 0;
+
+  mat-icon {
+    font-size: 40px;
+  }
+}

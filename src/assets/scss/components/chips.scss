@@ -1,0 +1,36 @@
+.chip {
+  border-radius: 20px;
+  min-width: 120px;
+  font-size: 10px;
+  line-height: 12px;
+  padding: 7px 10px;
+  display: inline-block;
+  text-align: initial;
+
+  background: var(--pending-chip);
+  color: var(--orange-1);
+
+  &:before {
+    content: '●';
+    margin-right: 7px;
+    color: var(--orange-1);
+  }
+}
+
+[data-status='active'] {
+  background: var(--active-chip);
+  color: var(--green-1);
+
+  &:before {
+    color: var(--green-1);
+  }
+}
+
+[data-status='pending'] {
+  background: var(--pending-chip);
+  color: var(--orange-1);
+
+  &:before {
+    color: var(--orange-1);
+  }
+}

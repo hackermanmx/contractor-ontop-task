@@ -1,0 +1,28 @@
+button {
+  cursor: pointer;
+  padding: 0 15px;
+  border: none;
+  height: 58px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.elevated {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  &.secondary {
+    background: var(--gray-4);
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+  }
+
+  &.primary {
+    background: var(--base-font-color);
+    font-size: 18px;
+    line-height: 24px;
+    color: white;
+  }
+}

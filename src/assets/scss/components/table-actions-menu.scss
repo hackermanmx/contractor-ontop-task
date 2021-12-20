@@ -1,0 +1,26 @@
+.menu-item {
+  span {
+    font-size: 14px;
+    letter-spacing: 0.1px;
+
+    &:before {
+      margin-right: 10px;
+    }
+  }
+
+  [data-menu-icon='edit']:before {
+    content: url('../../../assets/edit-icon.svg');
+  }
+
+  [data-menu-icon='sign']:before {
+    content: url('../../../assets/sign-icon.svg');
+  }
+
+  [data-menu-icon='document']:before {
+    content: url('../../../assets/docs-icon.svg');
+  }
+
+  [data-menu-icon='delete']:before {
+    content: url('../../../assets/delete-icon.svg');
+  }
+}

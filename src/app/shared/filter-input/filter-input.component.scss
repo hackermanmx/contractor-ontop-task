@@ -1,0 +1,49 @@
+.filter-container {
+  display: flex;
+
+  ::placeholder {
+    color: var(--gray-4);
+  }
+
+  label {
+    margin-right: 18px;
+    position: relative;
+    width: 100%;
+
+    &:before {
+      content: "\e8b6";
+      font-family: "Material Icons";
+      position: absolute;
+      left: 15px;
+      top: 20px;
+      color: var(--gray-5);
+      font-size: 30px;
+    }
+
+    input {
+      width: 100%;
+      font-size: 16px;
+      padding-left: 55px;
+      height: 58px;
+      border: 0.5px solid var(--gray);
+      box-shadow: none;
+    }
+  }
+
+  button {
+    min-width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      display: inline-block;
+      position: relative;
+
+      &:before {
+        margin-right: 6px;
+        content: url('../../../assets/filter-icon.svg');
+      }
+    }
+  }
+}

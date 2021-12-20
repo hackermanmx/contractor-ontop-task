@@ -1,0 +1,17 @@
+table {
+  background: #ffffff;
+  mix-blend-mode: normal;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 30px;
+  border-spacing: 0 25px;
+  width: 100%;
+
+  th {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    padding: 15px 0;
+    text-align: center;
+  }
+}

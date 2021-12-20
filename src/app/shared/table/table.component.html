@@ -1,0 +1,11 @@
+<table>
+    <thead fxShow="true" fxHide.lt-md="true">
+        <tr>
+            <th *ngFor="let col of columns">{{col.text}}</th>
+            <th *ngIf="showActions">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-content></ng-content>
+    </tbody>
+</table>

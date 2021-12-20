@@ -1,0 +1,11 @@
+@import 'responsive';
+
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 5%;
+
+  @include xl {
+    padding: 0;
+  }
+}
